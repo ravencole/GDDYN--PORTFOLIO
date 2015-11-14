@@ -8,7 +8,7 @@
     <div class="gradient--dark"></div>
     <div class="gradient--bottom"></div>    
     <video class="intro--video" loop muted autoplay>
-        <source src="/videos/fridge.mp4" type="video/mp4">
+        <source src="/videos/fridgeForWeb.mp4" type="video/mp4">
     </video>
     <div class="intro--textbox__byline">work by Raven Cole</div>
 </div>
