@@ -125,6 +125,9 @@ var Terminal = React.createClass({
             case 'close':
                 this.setState(this.props.model.terminalCommandClose(command, previousCommands, lastCommand));
                 break;
+            case 'git':
+                this.setState(this.props.model.terminalCommandGit(command, previousCommands, lastCommand));
+                break;
             case 'goto': 
                 this.setState(this.props.model.terminalCommandGoto(command, previousCommands, lastCommand));
                 break;

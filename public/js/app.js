@@ -123,6 +123,8 @@ var TerminalInput = React.createClass({
                         return this.props.terminalTemplate.clearHelp();
                     case 'closeHelp':
                         return this.props.terminalTemplate.closeHelp();
+                    case 'gitHelp':
+                        return this.props.terminalTemplate.gitHelp();
                     case 'gotoHelp':
                         return this.props.terminalTemplate.gotoHelp();
                     case 'gotoList':
@@ -766,6 +768,78 @@ var app = app || {};
         ); //'
     };
 
+    app.TerminalTemplateModel.prototype.gitHelp = function () {
+        var styles = {
+            gitHelp: {
+                height: '125px',
+                width: '100%',
+                boxSizing: 'border-box',
+                display: 'flex',
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                marginTop: '5px'
+            },
+            heading: {
+                height: '40px',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center'
+            },
+            gitHelpHeading: {
+                fontSize: '30px',
+                padding: '5px'
+            },
+            gitHelpBody: {
+                height: '80%',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                flexDirection: 'column'
+            },
+            bodyElements: {
+                marginBottom: '5px'
+            },
+            indent: {
+                paddingLeft: '10px'
+            }
+        };
+        return React.createElement(
+            'div',
+            { style: styles.gitHelp },
+            React.createElement(
+                'div',
+                { style: styles.heading },
+                React.createElement(
+                    'div',
+                    { style: styles.gitHelpHeading },
+                    'Git:'
+                )
+            ),
+            React.createElement(
+                'div',
+                { style: styles.gitHelpBody },
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'the [git] command will leave gddynytdtlls.com and redirect to the source code hosted on GitHub.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'with the exception of [-h]/[--help], [git] accepts no [modifier]s or [options].'
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    'syntax: [git] eg. git'
+                )
+            )
+        );
+    };
+
     app.TerminalTemplateModel.prototype.gotoHelp = function () {
         var styles = {
             goto: {
@@ -1144,7 +1218,7 @@ var app = app || {};
     app.TerminalTemplateModel.prototype.help = function () {
         var styles = {
             helpContainer: {
-                height: '70%',
+                height: '325px',
                 marginTop: '10px',
                 marginBottom: '5px',
                 width: '100%',
@@ -1240,6 +1314,11 @@ var app = app || {};
                         'div',
                         { style: styles.commandsList },
                         'close --- [no modifiers] -------'
+                    ),
+                    React.createElement(
+                        'div',
+                        { style: styles.commandsList },
+                        'git ----- [no modifiers] -------'
                     ),
                     React.createElement(
                         'div',
@@ -1867,6 +1946,32 @@ var app = app || {};
         };
     };
 
+    app.TerminalModel.prototype.terminalCommandGit = function (command, previousCommands, lastCommand) {
+        if (!command.option && !command.modifier) {
+            window.location = 'https://github.com/ravencole/GDDYN--PORTFOLIO';
+        }
+        if (command.option) {
+            var notAGitCommandOption = '[git] does not accept any options';
+            return {
+                terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), { message: true, template: false, content: notAGitCommandOption })
+            };
+        }
+        if (command.modifier) {
+            switch (command.modifier) {
+                case '--help':
+                //fallthrough
+                case '-h':
+                    return {
+                        terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), { message: false, template: 'gitHelp', content: '' })
+                    };
+                default:
+                    return {
+                        terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), notAModifier(command))
+                    };
+            }
+        }
+    };
+
     app.TerminalModel.prototype.terminalCommandGoto = function (command, previousCommands, lastCommand) {
         var routes = ['home', 'about', 'gifs', 'map'],
             minimizeTerminal = false;
@@ -2240,6 +2345,9 @@ var Terminal = React.createClass({
                 break;
             case 'close':
                 this.setState(this.props.model.terminalCommandClose(command, previousCommands, lastCommand));
+                break;
+            case 'git':
+                this.setState(this.props.model.terminalCommandGit(command, previousCommands, lastCommand));
                 break;
             case 'goto':
                 this.setState(this.props.model.terminalCommandGoto(command, previousCommands, lastCommand));

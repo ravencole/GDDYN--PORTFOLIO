@@ -31,6 +31,8 @@ var TerminalInput = React.createClass({
                         return this.props.terminalTemplate.clearHelp();
                     case 'closeHelp':
                         return this.props.terminalTemplate.closeHelp();
+                    case 'gitHelp':
+                        return this.props.terminalTemplate.gitHelp();
                     case 'gotoHelp':
                         return this.props.terminalTemplate.gotoHelp();
                     case 'gotoList': 

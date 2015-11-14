@@ -224,6 +224,33 @@ var app = app || {};
     };
 
 
+    app.TerminalModel.prototype.terminalCommandGit = function(command, previousCommands, lastCommand) {
+        if (!command.option && !command.modifier) {
+            window.location = 'https://github.com/ravencole/GDDYN--PORTFOLIO';
+        }
+        if (command.option) {
+            var notAGitCommandOption = '[git] does not accept any options';
+            return {
+                terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), {message: true, template: false, content: notAGitCommandOption})
+            };
+        }
+        if (command.modifier) {
+            switch (command.modifier) {
+                case '--help':
+                    //fallthrough
+                case '-h':
+                    return {
+                        terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), {message: false, template: 'gitHelp', content: ''})
+                    };
+                default:
+                    return {
+                        terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), notAModifier(command))
+                    };
+            }
+        }
+    };
+
+
     app.TerminalModel.prototype.terminalCommandGoto = function(command, previousCommands, lastCommand) {
         var routes           = ['home', 'about', 'gifs', 'map'],
             minimizeTerminal = false;

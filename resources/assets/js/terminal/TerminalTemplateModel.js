@@ -463,6 +463,65 @@ var app = app || {};
     };
 
 
+    app.TerminalTemplateModel.prototype.gitHelp = function() {
+        var styles = {
+            gitHelp: {
+                height: '125px',
+                width: '100%',
+                boxSizing: 'border-box',
+                display: 'flex',
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                marginTop: '5px'
+            },
+            heading: {
+                height: '40px',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center'
+            },
+            gitHelpHeading: {
+                fontSize: '30px',
+                padding: '5px'
+            },
+            gitHelpBody: {
+                height: '80%',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                flexDirection: 'column'
+            },
+            bodyElements: {
+                marginBottom: '5px'
+            },
+            indent: {
+                paddingLeft: '10px'
+            }
+        };
+        return (
+            <div style={styles.gitHelp}>
+                <div style={styles.heading}>
+                    <div style={styles.gitHelpHeading}>Git:</div>
+                </div>
+                <div style={styles.gitHelpBody}>
+                    <div style={styles.bodyElements}>
+                        the [git] command will leave gddynytdtlls.com and redirect to the source code hosted on GitHub.
+                    </div>
+                    <div style={styles.bodyElements}>
+                         with the exception of [-h]/[--help], [git] accepts no [modifier]s or [options].
+                    </div>
+                    <div>
+                        syntax: [git] eg. git
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+
     app.TerminalTemplateModel.prototype.gotoHelp = function() {
         var styles = {
             goto: {
@@ -770,7 +829,7 @@ var app = app || {};
     app.TerminalTemplateModel.prototype.help = function() {
         var styles = {
             helpContainer: {
-                height: '70%',
+                height: '325px',
                 marginTop: '10px',
                 marginBottom: '5px',
                 width: '100%',
@@ -837,6 +896,7 @@ var app = app || {};
                         <div style={styles.commandsList}>about --- [-s][-p] -------------</div>
                         <div style={styles.commandsList}>clear --- [no modifiers] -------</div>
                         <div style={styles.commandsList}>close --- [no modifiers] -------</div>
+                        <div style={styles.commandsList}>git ----- [no modifiers] -------</div>
                         <div style={styles.commandsList}>goto ---- [-l][-m] -------------</div>
                         <div style={styles.commandsList}>help ---- [no modifiers] -------</div>
                         <div style={styles.commandsList}>hide ---- [no modifiers] -------</div>
