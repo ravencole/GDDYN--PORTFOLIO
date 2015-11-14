@@ -1,0 +1,98 @@
+@mixin flex($align, $justify) {
+    display:flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+.intro, .intro--cont {
+    height: 100%;
+    width: 100%;
+    @include flex(center, center);
+    position: relative;
+}
+.gradient--dark {
+    background: linear-gradient(135deg, rgba(158,0,158,1) 0%, rgba(19,19,19,1) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: gradientDark 12s infinite alternate-reverse;
+    z-index: 2;
+}
+.gradient--top {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: gradientTop 7500ms infinite alternate-reverse;
+    background: linear-gradient(to right, rgba(255,0,50,1) 0%,rgba(255,255,0,1) 100%);
+    z-index: 4;
+}
+.gradient--bottom {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(255,0,250,1) 100%);
+    animation: gradientBottom 4500ms infinite alternate-reverse;
+    z-index: 3;
+}
+.intro--textbox__large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 90px;
+    color: white;
+    letter-spacing: .2em;
+    animation: introTextFadeOut 1s 2s linear forwards;
+}
+.intro--textbox__byline {
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: italic;
+    z-index: 3;
+}
+.intro--video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+@keyframes gradientBottom {
+    0% {opacity: .02;}
+    100% {opacity: .15;}
+}
+@keyframes gradientTop {
+    0% {opacity: .15;}
+    100% {opacity: .02;}
+}
+@keyframes gradientDark {
+    0% {opacity: .02;}
+    90% {opacity: .15;}
+    100% {opacity: .2;}
+}
+@keyframes introTextFadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

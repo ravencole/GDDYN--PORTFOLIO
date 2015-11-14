@@ -1,0 +1,12 @@
+/vendor
+/node_modules
+/public/videos
+Homestead.yaml
+Homestead.json
+/resources/assets/js/terminal/OldTerminal.js
+/resources/assets/js/terminal/OldTerminalButtons.js
+/resources/assets/js/terminal/OldTerminalInput.js
+/resources/assets/js/terminal/newTerminalCommandModel.js
+.env
+/.vagrant
+Vagrantfile

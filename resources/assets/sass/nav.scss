@@ -1,0 +1,118 @@
+
+.header {
+  width: 100%;
+  height: 25px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__text a {
+  text-decoration: none;
+  color: white;
+}
+
+.header__text:before, .header__text:after {
+  height: 11px;
+  width: 30%;
+  background-color: white;
+  position: absolute;
+  content: '';
+  top: 0;
+  /*box-shadow: 0px 18px 0px white;*/
+}
+.header__text:before {
+  left: 0;
+}
+.header__text:after {
+  right: 0;
+}
+
+#nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#nav {
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  top: 25px;
+  left: 0;
+  display: none;
+  align-items: center;
+  background-color: white;
+  z-index: 100;
+}
+#nav-left-half, #nav-right-half {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+#nav-left-half {
+  padding-left: 2em;
+  justify-content: flex-start;
+}
+#nav-right-half {
+  padding-right: 2em;
+  justify-content: flex-end;
+}
+#nav-right-half div, #nav-left-half div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: black;
+  background-color: transparent;
+  font-family: sans-serif;
+  border: 3px solid black;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: underline;
+  animation: in 500ms 0s;
+}
+#nav-right-half div {
+  margin: 0px .8em;
+}
+#nav-right-half div:hover, #nav-left-half div:hover {
+  border-color: deepskyblue;
+  color: deepskyblue;
+  transform: rotate(180deg);
+  animation: out 350ms 0s;
+  background-color: white;
+}
+@keyframes out {
+  0% {
+    transform: rotate(0deg);
+    border-color: black;
+    color: black;
+  }
+  100% {
+    transform: rotate(180deg);
+    border-color: deepskyblue;
+    color: deepskyblue;
+  }
+}
+@keyframes in {
+  0% {
+    transform: rotate(180deg);
+    border-color: deepskyblue;
+    color: deepskyblue;
+  }
+  100% {
+    transform: rotate(-360deg);
+    border-color: black;
+    color: black;
+  }
+}

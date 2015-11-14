@@ -1,0 +1,55 @@
+@mixin flex($align, $justify) {
+    display:flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.about-container {
+    @include flex(center, center);
+    width: 100%;
+    height: 100%;
+}
+.phone {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: phoneIn 1200ms normal forwards ease;
+}
+.email {
+  top: 33%;
+  transform: translateX(-50%);
+  animation: emainIn 1500ms normal forwards ease;
+}
+.activities {
+  top: 66%;
+  transform: translateX(-50%);
+  animation: activitiesIn 2100ms normal forwards ease;
+}
+.github {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: githubIn 2500ms normal forwards ease;
+}
+@keyframes phoneIn {
+  0% {top: -1000%; color: rgba(255,255,255,0);}
+  20% {top: -1000%; color: rgba(255,255,255,0);}
+  60% {color: rgba(255,255,255,0);}
+  100% {top: 0; color: rgba(255,255,255,1);}
+}
+@keyframes githubIn {
+  0% {top: 1000%; opacity: 0;}
+  20% {top: 1000%; opacity: 0;}
+  60% {opacity: 0;}
+  100% {top: 110%;opacity: 1;}
+}
+@keyframes emainIn {
+  0% {left: -1000%;color: rgba(255,255,255,0);}
+  20% {left: -1000%;color: rgba(255,255,255,0);}
+  60% {color: rgba(255,255,255,0);}
+  100% {left: 50%;color: rgba(255,255,255,1);}
+}
+@keyframes activitiesIn {
+  0% {left: 1000%;color: rgba(255,255,255,0);}
+  20% {left: 1000%;color: rgba(255,255,255,0);}
+  60% {color: rgba(255,255,255,0);}
+  100% {left: 50%;color: rgba(255,255,255,1);}
+}
