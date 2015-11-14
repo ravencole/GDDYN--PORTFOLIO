@@ -41,8 +41,8 @@ var Intro = React.createClass({
         return (
             <div className="intro--cont">
                 <div className="intro--text" style={[styles.text, this.state.done && styles.textColor]}>{this.state.text}</div>
-                <video className="intro__video" loop muted autoPlay>
-                    <source src="/videos/fridge.mp4" type="video/mp4" />
+                <video className="intro--video" loop muted autoPlay>
+                    <source src="/videos/fridgeForWeb.mp4" type="video/mp4" />
                 </video>
             </div>
         );

@@ -1,6 +1,5 @@
 /vendor
 /node_modules
-/public/videos
 Homestead.yaml
 Homestead.json
 /resources/assets/js/terminal/OldTerminal.js
