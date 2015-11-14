@@ -1,6 +1,7 @@
 var Terminal = React.createClass({
     getInitialState: function() {
         var getTerminalHiddenCookie     = docCookies.getItem('terminalHidden'),
+            getVisited                  = docCookies.getItem('visited'),
             getTerminalUserName         = docCookies.getItem('terminalUserName'),
             getTerminalTextColor        = docCookies.getItem('terminalTextColor'),
             getTerminalBackgroundColor  = docCookies.getItem('terminalBackgroundColor'),
@@ -12,7 +13,7 @@ var Terminal = React.createClass({
             terminalHidden:  getTerminalHiddenCookie ? JSON.parse(getTerminalHiddenCookie) : false,
             terminalInputText: '',
             terminalLastCommand: '',
-            terminalPreviousCommands: [{message: true, template: 'welcome', content: ''}],
+            terminalPreviousCommands: getVisited ? [] : [{template: 'welcome', message: true, content: ''}],
             terminalPreviousCommandsCount: 1,
             terminalUserName: getTerminalUserName ? getTerminalUserName : 'guest',
             terminalTextColor: getTerminalTextColor ? getTerminalTextColor : '#00ff00',
@@ -25,6 +26,7 @@ var Terminal = React.createClass({
                 this.handleKeyPress(e);
             }        
         }.bind(this));
+        docCookies.setItem('visited', true);
     },
     handleKeyPress: function(e) {
         switch (e.keyCode) {
