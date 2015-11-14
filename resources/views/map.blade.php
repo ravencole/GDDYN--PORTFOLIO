@@ -10,3 +10,11 @@
 </div>
 
 @endsection
+
+@section('scripts')
+
+<script type="text/javascript" src="/js/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtgZRui3QKo3tEUnhZ5P3KjoRxqMmut70&callback=initMap"></script>
+
+
+@endsection

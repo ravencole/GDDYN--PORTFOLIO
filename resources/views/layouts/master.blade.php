@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>secondTimeAround</title>
+    <title>GDDYNYTDTLLS.COM</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
-    <scriptsrc="/js/require.js"></script>
 </head>
 <body>
     <div class="header">
@@ -26,19 +25,8 @@
         @yield('content')
     </div>
     <div id="terminal"></div>
-    @if ( Config::get('app.debug') ) <!-- livereload remove before deploy -->
-      <script type="text/javascript">
-        document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
-      </script> 
-    @endif
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/react.js"></script>
-    <script type="text/javascript" src="/js/radium.js"></script>
-    <script type="text/javascript" src="/js/all.js"></script>
-    <script type="text/javascript" src="/js/gifs.js"></script>
-    <script type="text/javascript" src="/js/about.js"></script>
-    <script type="text/javascript" src="/js/terminal.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtgZRui3QKo3tEUnhZ5P3KjoRxqMmut70&callback=initMap">
-    </script>
+    <script type="text/javascript" src="/js/vendor.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    @yield('scripts')
 </body>
 </html>
