@@ -244,7 +244,7 @@ var app = app || {};
                     };
                 default:
                     return {
-                        terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), notAModifier(command))
+                        terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), this.notAModifier(command))
                     };
             }
         }
