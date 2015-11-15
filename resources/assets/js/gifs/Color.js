@@ -26,7 +26,7 @@ var Color = React.createClass({
                        value={this.state.color} 
                        onChange={this.colorChange}/>
 
-                <div className="sidebar--form__label" 
+                <div className="sidebar--form__label sidebar--form__request" 
                      onClick={this.handleRandomColor}>
                         also, im gonna need a random color.
                 </div>

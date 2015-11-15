@@ -40,7 +40,13 @@ var Gifs = React.createClass({
         this.setState({ speed: speed });
     },
     handleNumOfImagesChange: function(numOfImages) {
-        this.setState({ numOfImages: numOfImages - 1});
+        if (numOfImages > 120) {
+            this.setState({ numOfImages: 120});
+        }
+        else {
+            this.setState({ numOfImages: numOfImages - 1});
+        }
+        console.log(this.state.numOfImages);
     },
     toggleAlwaysRandomColor: function() {
         this.setState({ alwaysRandomColor: ! this.state.alwaysRandomColor });
