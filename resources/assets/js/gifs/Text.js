@@ -29,7 +29,7 @@ var Text = React.createClass({
                        placeholder={this.props.pictureText} 
                        value={this.state.text}
                        onChange={this.onTextChange} /> 
-                <div className="sidebar--form__label" 
+                <div className="sidebar--form__label sidebar--form__request" 
                        onClick={this.randomLine}>
                             let me get a random mm line
                 </div>    
