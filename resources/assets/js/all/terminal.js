@@ -118,6 +118,8 @@ var TerminalInput = React.createClass({
                         return this.props.terminalTemplate.styleHelp();
                     case 'validColors':
                         return this.props.terminalTemplate.validColors();
+                    // case 'watchTest':
+                    //     return this.props.terminalTemplate.watchTest();
                     case 'welcome':
                         return this.props.terminalTemplate.welcome();
                     default:
@@ -1325,11 +1327,6 @@ var app = app || {};
                     React.createElement(
                         'div',
                         { style: styles.commandsList },
-                        'watch --- [-l] -----------------'
-                    ),
-                    React.createElement(
-                        'div',
-                        { style: styles.commandsList },
                         'in addition to these [modifiers], all commands have a help menu that can be accessed by passing the [-h] or [--help] modifier'
                     )
                 )
@@ -1484,6 +1481,36 @@ var app = app || {};
                 { style: styles.colorsBody },
                 displayTerminalColors
             )
+        );
+    };
+
+    app.TerminalTemplateModel.prototype.watchTest = function () {
+        var styles = {
+            test: {
+                height: '95%',
+                width: '100%',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative'
+            },
+            bubble: {
+                position: 'absolute',
+                height: '80px',
+                width: '80px',
+                top: '50%',
+                left: '50%',
+                transition: 'all 1s ease',
+                border: '1px solid rgba(255,255,255,.5)',
+                boxShadow: 'inset 0 0 12px rgba(255,255,255,.5)',
+                borderRadius: '50%'
+            }
+        };
+        return React.createElement(
+            'div',
+            { style: styles.test },
+            React.createElement('div', { style: styles.bubble })
         );
     };
 
@@ -2150,6 +2177,16 @@ var app = app || {};
         }
     };
 
+    app.TerminalModel.prototype.terminalCommandWatch = function (command, previousCommands, lastCommand) {
+        var animations = ['test'];
+        if (command.option && this.isInArray(command.option, animations)) {
+            var animationTemplate = 'watch' + command.option.substring(0, 1).toUpperCase() + command.option.substring(1);
+            return {
+                terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), { message: true, template: animationTemplate, content: '' })
+            };
+        }
+    };
+
     app.TerminalModel.prototype.terminalLogCommand = function (lastCommand) {
         return {
             message: false, content: lastCommand
@@ -2211,7 +2248,7 @@ var Terminal = React.createClass({
             terminalHidden: getTerminalHiddenCookie ? JSON.parse(getTerminalHiddenCookie) : false,
             terminalInputText: '',
             terminalLastCommand: '',
-            terminalPreviousCommands: getVisited ? [] : [{ template: 'welcome', message: true, content: '' }],
+            terminalPreviousCommands: getVisited ? [{ message: true, template: 'watchTest', content: '' }] : [{ template: 'welcome', message: true, content: '' }],
             terminalPreviousCommandsCount: 1,
             terminalUserName: getTerminalUserName ? getTerminalUserName : 'guest',
             terminalTextColor: getTerminalTextColor ? getTerminalTextColor : '#00ff00',
@@ -2338,6 +2375,9 @@ var Terminal = React.createClass({
             case 'style':
                 this.setState(this.props.model.terminalCommandStyle(command, previousCommands, lastCommand));
                 break;
+            // case 'watch':
+            //     this.setState(this.props.model.terminalCommandWatch(command, previousCommands, lastCommand));
+            //     break;
             default:
                 this.setState(this.props.model.notACommand(command, previousCommands, lastCommand));
                 break;

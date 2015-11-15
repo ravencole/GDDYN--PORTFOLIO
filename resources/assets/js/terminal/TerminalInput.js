@@ -49,6 +49,8 @@ var TerminalInput = React.createClass({
                         return this.props.terminalTemplate.styleHelp();
                     case 'validColors':
                         return this.props.terminalTemplate.validColors();
+                    // case 'watchTest':
+                    //     return this.props.terminalTemplate.watchTest();
                     case 'welcome':
                         return this.props.terminalTemplate.welcome();
                     default:

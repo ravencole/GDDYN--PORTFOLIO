@@ -458,6 +458,17 @@ var app = app || {};
     };
 
 
+    app.TerminalModel.prototype.terminalCommandWatch = function(command, previousCommands, lastCommand) {
+        var animations = ['test'];
+        if (command.option && this.isInArray(command.option, animations)) {
+            var animationTemplate = 'watch' + command.option.substring(0,1).toUpperCase() + command.option.substring(1);
+            return {
+                terminalPreviousCommands: previousCommands.concat(this.terminalLogCommand(lastCommand), {message: true, template: animationTemplate, content: ''})
+            };
+        }
+    };
+
+
     app.TerminalModel.prototype.terminalLogCommand = function(lastCommand) {
         return { 
             message: false, content: lastCommand 

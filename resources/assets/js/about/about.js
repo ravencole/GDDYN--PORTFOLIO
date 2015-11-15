@@ -105,7 +105,7 @@ var About = React.createClass({
                         <div className="email" style={[styles.words]}>ravenscole@gmail.com</div>
                         <div className="activities" style={[styles.words]}>sculpture.words.programming</div>
                         <div className="github" style={[styles.words]}>
-                            <a href="http://github.com/ravencole/Portfolio"><img height='30px' src="/images/github.svg" alt="github yall" /></a>
+                            <a href="https://github.com/ravencole/GDDYN--PORTFOLIO"><img height='30px' src="/images/github.svg" alt="github yall" /></a>
                         </div>
                     </div>
                 </div>

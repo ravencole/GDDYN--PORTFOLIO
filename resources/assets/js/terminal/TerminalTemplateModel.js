@@ -902,7 +902,6 @@ var app = app || {};
                         <div style={styles.commandsList}>hide ---- [no modifiers] -------</div>
                         <div style={styles.commandsList}>name ---- [-u] -----------------</div>
                         <div style={styles.commandsList}>style --- [-tc][-c][-bg] -------</div>
-                        <div style={styles.commandsList}>watch --- [-l] -----------------</div>
                         <div style={styles.commandsList}>in addition to these [modifiers], all commands have a help menu that can be accessed by passing the [-h] or [--help] modifier</div>
                     </div>
                 </div>
@@ -1015,6 +1014,37 @@ var app = app || {};
                 <div style={styles.colorsBody}>
                     {displayTerminalColors}
                 </div>
+            </div>
+        );
+    };
+
+
+    app.TerminalTemplateModel.prototype.watchTest = function() {
+        var styles = {
+            test: {
+                height: '95%',
+                width: '100%',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative'
+            },
+            bubble: {
+                position: 'absolute',
+                height: '80px',
+                width: '80px',
+                top: '50%',
+                left: '50%',
+                transition: 'all 1s ease',
+                border: '1px solid rgba(255,255,255,.5)',
+                boxShadow: 'inset 0 0 12px rgba(255,255,255,.5)',
+                borderRadius: '50%'
+            }
+        };
+        return (
+            <div style={styles.test}>
+                <div style={styles.bubble}></div>
             </div>
         );
     };

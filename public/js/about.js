@@ -136,7 +136,7 @@ var About = React.createClass({
                         { className: 'github', style: [styles.words] },
                         React.createElement(
                             'a',
-                            { href: 'http://github.com/ravencole/Portfolio' },
+                            { href: 'https://github.com/ravencole/GDDYN--PORTFOLIO' },
                             React.createElement('img', { height: '30px', src: '/images/github.svg', alt: 'github yall' })
                         )
                     )
