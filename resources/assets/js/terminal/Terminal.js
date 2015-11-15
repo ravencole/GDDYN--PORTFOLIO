@@ -13,7 +13,7 @@ var Terminal = React.createClass({
             terminalHidden:  getTerminalHiddenCookie ? JSON.parse(getTerminalHiddenCookie) : false,
             terminalInputText: '',
             terminalLastCommand: '',
-            terminalPreviousCommands: getVisited ? [{message: true, template: 'watchTest', content: ''}] : [{template: 'welcome', message: true, content: ''}],
+            terminalPreviousCommands: getVisited ? [] : [{template: 'welcome', message: true, content: ''}],
             terminalPreviousCommandsCount: 1,
             terminalUserName: getTerminalUserName ? getTerminalUserName : 'guest',
             terminalTextColor: getTerminalTextColor ? getTerminalTextColor : '#00ff00',
