@@ -13,7 +13,7 @@ var Terminal = React.createClass({
             terminalHidden:  getTerminalHiddenCookie ? JSON.parse(getTerminalHiddenCookie) : false,
             terminalInputText: '',
             terminalLastCommand: '',
-            terminalPreviousCommands: getVisited ? [] : [{template: 'welcome', message: true, content: ''}],
+            terminalPreviousCommands: getVisited ? [{message: true, template: 'watchTest', content: ''}] : [{template: 'welcome', message: true, content: ''}],
             terminalPreviousCommandsCount: 1,
             terminalUserName: getTerminalUserName ? getTerminalUserName : 'guest',
             terminalTextColor: getTerminalTextColor ? getTerminalTextColor : '#00ff00',
@@ -139,6 +139,9 @@ var Terminal = React.createClass({
                 break;
             case 'style':
                 this.setState(this.props.model.terminalCommandStyle(command, previousCommands, lastCommand));
+                break;
+            case 'watch':
+                this.setState(this.props.model.terminalCommandWatch(command, previousCommands, lastCommand));
                 break;
             default:
                 this.setState(this.props.model.notACommand(command, previousCommands, lastCommand));
