@@ -266,7 +266,7 @@ var app = app || {};
                         Especially with young artists who are looking for work to consume.
                     </div>
                     <div style={styles.bodyElements}>
-                        Which, in an of itself, isn’t cause for offense, but as the influence of the
+                        Which, in and of itself, isn’t cause for offense, but as the influence of the
                     </div>
                     <div style={styles.bodyElements}>
                         blog grows, so does the crop of people making work for the purpose of fitting
@@ -362,7 +362,7 @@ var app = app || {};
             <div style={styles.aboutGifs}>
                 <div style={styles.aboutGifsBody}>
                     <div style={styles.bodyElements}>
-                        About the Site:
+                        {"<------ Site ------->"}
                     </div>
                     <div style={styles.bodyElements}>
                         In its current form, this site is a web portfolio, but it's likely to lose and take on roles at later dates.
@@ -404,7 +404,7 @@ var app = app || {};
                         All the code will be running behind a small, but extendable API.
                     </div>
                     <div style={styles.bodyElements}>
-                        Which in a deeply messy way is how it runs now.
+                        Which, in a deeply messy way, is how it runs now.
                     </div>
                     <div style={styles.bodyElements}>
                         I’ll release a version based on React, and then likely a dependency-less vanilla JS version.
@@ -491,7 +491,7 @@ var app = app || {};
                         started programming.
                     </div>
                     <div style={styles.bodyElements}>
-                        I was spending all of my time working in cabinet shops in Richmond, VA after I
+                        I was spending all of my time working in cabinet shops in Richmond, VA. after I
                     </div>
                     <div style={styles.bodyElements}>
                         graduated from VCU, and was feeling like I couldn’t put time in at the studio
@@ -500,7 +500,7 @@ var app = app || {};
                         like I wanted to.
                     </div>
                     <div style={styles.bodyElements}>
-                        I was preparing for a show with a friend at the time and wanted to make something
+                        I was preparing for a show with a friend at the time, and wanted to make something
                     </div>
                     <div style={styles.bodyElements}>
                         that would help me feel connected to my studio practice while I was at work.
@@ -524,7 +524,7 @@ var app = app || {};
                         The idea was kind of interesting, but all the code is procedural PHP written by someone
                     </div>
                     <div style={styles.bodyElements}>
-                        who knows nothing about programming. Like 400 lines of in-inline PHP in the center
+                        who knows nothing about programming. Like 400 lines of in-line PHP in the center
                     </div>
                     <div style={styles.bodyElements}>
                         of an HTML page all Wild-West style.
