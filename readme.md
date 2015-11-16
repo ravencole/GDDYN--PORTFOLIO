@@ -31,9 +31,11 @@ code is still being refactored.
     React is incredible. It took me a second to get used to all the markup in the JS and the
     inline styles, but it also only took me a second to forget how I made UI's without it. 
     Some kind of game changer that thing is.
+    -----
     2:
     PHP was the first language I learned, and Laravel the first MCV. I've done some
     Rails and Django, but as much hate as it gets I do love writing PHP. and using Laravel.
+    -----
     3: 
     Right now the Terminal is running with a controller in the main React file, and two
     models, one that holds the behavior of the command, and one that generates templates
