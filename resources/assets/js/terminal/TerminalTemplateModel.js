@@ -126,7 +126,8 @@ var app = app || {};
                 alignItems: 'flex-start',
                 justifyContent: 'center',
                 flexDirection: 'column',
-                margin: '10px 0 5px 0'
+                margin: '10px 0 5px 0',
+                overflow: 'scroll'
             },
             heading: {
                 height: '20px',
@@ -160,7 +161,43 @@ var app = app || {};
                         {"<----home---->"}
                     </div>
                     <div style={styles.bodyElements}>
-                        video of an anonymous person trying not to blow a gasket.
+                        There isn't much to say about the home page except to explain the video.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Clearly, we've got some images of food stuffs in a refridgerator.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I made it as a place holder for another video I had going.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It was of a sculpture I made that hangs on the wall as though it’s a shelving unit.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        A hand is setting objects on it. Taking them back off. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Some normal attempt to put in motion a static structure.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It was horrendous and lame. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I made a few more, and nothing felt good like the fridge video.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I’m having some anxiety that the fridge video feels lazy, 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        even though I enjoy watching it. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It’s only a minor texture on the site, so I’ve kept it for now.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The next attempt will probably be a video of my car I’ve been
+                    </div>
+                    <div style={styles.bodyElements}>
+                        meaning to make for a while.
                     </div>
                 </div>
             </div>
@@ -211,7 +248,73 @@ var app = app || {};
                         {"<----contemporary art gifs---->"}
                     </div>
                     <div style={styles.bodyElements}>
-                        this is where the good writing goes.
+                        the gif maker comes from a strong impulse I have to joke on
+                    </div>
+                    <div style={styles.bodyElements}>
+                        contemporary art daily.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It’s a blog that posts aesthetically specific contemporary art works.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The problem though is that its become an incredibly prominent 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        taste maker in contemporary art.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Especially with young artists who are looking for work to consume.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Which, in an of itself, isn’t cause for offense, but as the influence of the
+                    </div>
+                    <div style={styles.bodyElements}>
+                        blog grows, so does the crop of people making work for the purpose of fitting
+                    </div>
+                    <div style={styles.bodyElements}>
+                        into the mold that the site has created.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        And at this point we still haven’t arrived at anything to be overly upset about.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Of course this happens. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The problem is that the more this formula is implemented, the more soulless the work
+                    </div>
+                    <div style={styles.bodyElements}>
+                        becomes in an effort to conform to the aesthetic contact that the site operates on.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        This contract has become rigid and overworked to the point that
+                    </div>
+                    <div style={styles.bodyElements}>
+                        images of the work actually make great templates for close to anything.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        They’re consistent,
+                    </div>
+                    <div style={styles.bodyElements}>
+                        reliable, 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        and take language hilariously. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        But as an addendum to all of this, I also don’t want to come off as another
+                    </div>
+                    <div style={styles.bodyElements}>
+                        contemporary art hater.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        There’s a lot of important work in the world that I love,
+                    </div>
+                    <div style={styles.bodyElements}>
+                        it’s just that I can’t tolerate work that at its core is an effort to fit in,
+                    </div>
+                    <div>
+                        and/or rake in money from an over-inflated art market. 
                     </div>
                 </div>
             </div>
@@ -262,7 +365,64 @@ var app = app || {};
                         About the Site:
                     </div>
                     <div style={styles.bodyElements}>
-                        gotta write about it man.
+                        In its current form, this site is a web portfolio, but it's likely to lose and take on roles at later dates.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It’s built mostly with React, running with a Laravel backend.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Certainly this doesn’t need to be a Laravel App to do what it’s doing now.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Laravel is around with future projects in mind. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The Terminal code — while working fine for me ATM — is a mess. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        DRY is hysterical to think about when looking at the source.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It isn’t even almost, a little, or at all.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It needs unit-testing, and is painfully existing without an adequate templating system.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It is also completely running on React,
+                    </div>
+                    <div style={styles.bodyElements}>
+                        so unless it’s running on a single page app, or the entire site is running as a React app,
+                    </div>
+                    <div style={styles.bodyElements}>
+                        which this one isn’t, it’s hacky to implement site-wide.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The Terminal is being completely rewritten so that it runs essentially like a small MVC.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        All the code will be running behind a small, but extendable API.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Which in a deeply messy way is how it runs now.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I’ll release a version based on React, and then likely a dependency-less vanilla JS version.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        Once those are done, it’ll just replace the terminal on the site here. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        All said though, I’ve had a lot of fun with the Terminal.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The source for the site and more writing about the project is on the GitHub page.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        There’s a link to it on the about page, or you can run the ‘git’ command in the
+                    </div>
+                    <div>
+                        terminal, and you’ll be redirected to GitHub.
                     </div>
                 </div>
             </div>
@@ -313,25 +473,70 @@ var app = app || {};
                         {"<----map---->"}
                     </div>
                     <div style={styles.bodyElements}>
-                        this page is kind of a mess whether you're looking at the content or the implementation.
+                        There isn’t much to the code here.
                     </div>
                     <div style={styles.bodyElements}>
-                        initially I started programming because I was interested in the ratio of putting work into a project veruses getting work back out of it. 
+                        Simple google maps API thing.
                     </div>
                     <div style={styles.bodyElements}>
-                        when I got out of school I started working in cabinet shops.
+                        The backend for it is slightly cooler.
                     </div>
                     <div style={styles.bodyElements}>
-                        
+                        It grabs the meta-data from the pictures I upload and plots them on the map.
                     </div>
                     <div style={styles.bodyElements}>
-                        
+                        Still not too terribly interesting, but it’s one of the first things I made when I
                     </div>
                     <div style={styles.bodyElements}>
-                        
+                        started programming.
                     </div>
                     <div style={styles.bodyElements}>
-                        
+                        I was spending all of my time working in cabinet shops in Richmond, VA after I
+                    </div>
+                    <div style={styles.bodyElements}>
+                        graduated from VCU, and was feeling like I couldn’t put time in at the studio
+                    </div>
+                    <div style={styles.bodyElements}>
+                        like I wanted to.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I was preparing for a show with a friend at the time and wanted to make something
+                    </div>
+                    <div style={styles.bodyElements}>
+                        that would help me feel connected to my studio practice while I was at work.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I ended up learning some PHP so that I could send text messages to a server and have
+                    </div>
+                    <div style={styles.bodyElements}>
+                        them displayed in real time on a sculpture I was working on. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The code I ended up writing for it is hysterical now. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I was sending text messages to an email server that would then parse them
+                    </div>
+                    <div style={styles.bodyElements}>
+                        and add them to a webpage. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        The idea was kind of interesting, but all the code is procedural PHP written by someone
+                    </div>
+                    <div style={styles.bodyElements}>
+                        who knows nothing about programming. Like 400 lines of in-inline PHP in the center
+                    </div>
+                    <div style={styles.bodyElements}>
+                        of an HTML page all Wild-West style.
+                    </div>
+                    <div style={styles.bodyElements}>
+                        I made the map app shortly after that with the same ideas in mind. 
+                    </div>
+                    <div style={styles.bodyElements}>
+                        It’s clunky and the UI is pretty bad, but I like the project.
+                    </div>
+                    <div>
+                        I should just go ahead and rewrite it. 
                     </div>
                 </div>
             </div>
@@ -511,7 +716,7 @@ var app = app || {};
                         the [git] command will leave gddynytdtlls.com and redirect to the source code hosted on GitHub.
                     </div>
                     <div style={styles.bodyElements}>
-                         with the exception of [-h]/[--help], [git] accepts no [modifier]s or [options].
+                         with the exception of [-h]/[--help], [git] accepts no [modifier]s or [option]s.
                     </div>
                     <div>
                         syntax: [git] eg. git
@@ -829,7 +1034,7 @@ var app = app || {};
     app.TerminalTemplateModel.prototype.help = function() {
         var styles = {
             helpContainer: {
-                height: '325px',
+                height: '315px',
                 marginTop: '10px',
                 marginBottom: '5px',
                 width: '100%',

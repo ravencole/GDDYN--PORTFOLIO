@@ -247,7 +247,8 @@ body, html {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 
 .gradient--dark {
   background: linear-gradient(135deg, #9e009e 0%, #131313 100%);

@@ -94,6 +94,8 @@ var TerminalInput = React.createClass({
                         return this.props.terminalTemplate.aboutHelp();
                     case 'aboutHome':
                         return this.props.terminalTemplate.aboutHome();
+                    case 'aboutMap':
+                        return this.props.terminalTemplate.aboutMap();
                     case 'aboutSite':
                         return this.props.terminalTemplate.aboutSite();
                     case 'clearHelp':
@@ -362,7 +364,8 @@ var app = app || {};
                 alignItems: 'flex-start',
                 justifyContent: 'center',
                 flexDirection: 'column',
-                margin: '10px 0 5px 0'
+                margin: '10px 0 5px 0',
+                overflow: 'scroll'
             },
             heading: {
                 height: '20px',
@@ -403,7 +406,67 @@ var app = app || {};
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'video of an anonymous person trying not to blow a gasket.'
+                    'There isn\'t much to say about the home page except to explain the video.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Clearly, we\'ve got some images of food stuffs in a refridgerator.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I made it as a place holder for another video I had going.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It was of a sculpture I made that hangs on the wall as though it’s a shelving unit.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'A hand is setting objects on it. Taking them back off.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Some normal attempt to put in motion a static structure.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It was horrendous and lame.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I made a few more, and nothing felt good like the fridge video.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I’m having some anxiety that the fridge video feels lazy,'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'even though I enjoy watching it.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It’s only a minor texture on the site, so I’ve kept it for now.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The next attempt will probably be a video of my car I’ve been'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'meaning to make for a while.'
                 )
             )
         ); //'
@@ -459,7 +522,117 @@ var app = app || {};
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'this is where the good writing goes.'
+                    'the gif maker comes from a strong impulse I have to joke on'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'contemporary art daily.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It’s a blog that posts aesthetically specific contemporary art works.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The problem though is that its become an incredibly prominent'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'taste maker in contemporary art.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Especially with young artists who are looking for work to consume.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Which, in an of itself, isn’t cause for offense, but as the influence of the'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'blog grows, so does the crop of people making work for the purpose of fitting'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'into the mold that the site has created.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'And at this point we still haven’t arrived at anything to be overly upset about.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Of course this happens.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The problem is that the more this formula is implemented, the more soulless the work'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'becomes in an effort to conform to the aesthetic contact that the site operates on.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'This contract has become rigid and overworked to the point that'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'images of the work actually make great templates for close to anything.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'They’re consistent,'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'reliable,'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'and take language hilariously.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'But as an addendum to all of this, I also don’t want to come off as another'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'contemporary art hater.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'There’s a lot of important work in the world that I love,'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'it’s just that I can’t tolerate work that at its core is an effort to fit in,'
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    'and/or rake in money from an over-inflated art market.'
                 )
             )
         ); //'
@@ -515,7 +688,102 @@ var app = app || {};
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'gotta write about it man.'
+                    'In its current form, this site is a web portfolio, but it\'s likely to lose and take on roles at later dates.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It’s built mostly with React, running with a Laravel backend.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Certainly this doesn’t need to be a Laravel App to do what it’s doing now.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Laravel is around with future projects in mind.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The Terminal code — while working fine for me ATM — is a mess.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'DRY is hysterical to think about when looking at the source.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It isn’t even almost, a little, or at all.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It needs unit-testing, and is painfully existing without an adequate templating system.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It is also completely running on React,'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'so unless it’s running on a single page app, or the entire site is running as a React app,'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'which this one isn’t, it’s hacky to implement site-wide.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The Terminal is being completely rewritten so that it runs essentially like a small MVC.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'All the code will be running behind a small, but extendable API.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Which in a deeply messy way is how it runs now.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I’ll release a version based on React, and then likely a dependency-less vanilla JS version.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Once those are done, it’ll just replace the terminal on the site here.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'All said though, I’ve had a lot of fun with the Terminal.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The source for the site and more writing about the project is on the GitHub page.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'There’s a link to it on the about page, or you can run the ‘git’ command in the'
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    'terminal, and you’ll be redirected to GitHub.'
                 )
             )
         ); //'
@@ -571,22 +839,113 @@ var app = app || {};
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'this page is kind of a mess whether you\'re looking at the content or the implementation.'
+                    'There isn’t much to the code here.'
                 ),
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'initially I started programming because I was interested in the ratio of putting work into a project veruses getting work back out of it.'
+                    'Simple google maps API thing.'
                 ),
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'when I got out of school I started working in cabinet shops.'
+                    'The backend for it is slightly cooler.'
                 ),
-                React.createElement('div', { style: styles.bodyElements }),
-                React.createElement('div', { style: styles.bodyElements }),
-                React.createElement('div', { style: styles.bodyElements }),
-                React.createElement('div', { style: styles.bodyElements })
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It grabs the meta-data from the pictures I upload and plots them on the map.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'Still not too terribly interesting, but it’s one of the first things I made when I'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'started programming.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I was spending all of my time working in cabinet shops in Richmond, VA after I'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'graduated from VCU, and was feeling like I couldn’t put time in at the studio'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'like I wanted to.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I was preparing for a show with a friend at the time and wanted to make something'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'that would help me feel connected to my studio practice while I was at work.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I ended up learning some PHP so that I could send text messages to a server and have'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'them displayed in real time on a sculpture I was working on.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The code I ended up writing for it is hysterical now.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I was sending text messages to an email server that would then parse them'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'and add them to a webpage.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'The idea was kind of interesting, but all the code is procedural PHP written by someone'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'who knows nothing about programming. Like 400 lines of in-inline PHP in the center'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'of an HTML page all Wild-West style.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'I made the map app shortly after that with the same ideas in mind.'
+                ),
+                React.createElement(
+                    'div',
+                    { style: styles.bodyElements },
+                    'It’s clunky and the UI is pretty bad, but I like the project.'
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    'I should just go ahead and rewrite it.'
+                )
             )
         ); //'
     };
@@ -808,7 +1167,7 @@ var app = app || {};
                 React.createElement(
                     'div',
                     { style: styles.bodyElements },
-                    'with the exception of [-h]/[--help], [git] accepts no [modifier]s or [options].'
+                    'with the exception of [-h]/[--help], [git] accepts no [modifier]s or [option]s.'
                 ),
                 React.createElement(
                     'div',
@@ -1197,7 +1556,7 @@ var app = app || {};
     app.TerminalTemplateModel.prototype.help = function () {
         var styles = {
             helpContainer: {
-                height: '325px',
+                height: '315px',
                 marginTop: '10px',
                 marginBottom: '5px',
                 width: '100%',
@@ -2248,7 +2607,7 @@ var Terminal = React.createClass({
             terminalHidden: getTerminalHiddenCookie ? JSON.parse(getTerminalHiddenCookie) : false,
             terminalInputText: '',
             terminalLastCommand: '',
-            terminalPreviousCommands: getVisited ? [{ message: true, template: 'watchTest', content: '' }] : [{ template: 'welcome', message: true, content: '' }],
+            terminalPreviousCommands: getVisited ? [] : [{ template: 'welcome', message: true, content: '' }],
             terminalPreviousCommandsCount: 1,
             terminalUserName: getTerminalUserName ? getTerminalUserName : 'guest',
             terminalTextColor: getTerminalTextColor ? getTerminalTextColor : '#00ff00',

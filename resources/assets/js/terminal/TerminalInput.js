@@ -25,6 +25,8 @@ var TerminalInput = React.createClass({
                         return this.props.terminalTemplate.aboutHelp();
                     case 'aboutHome':
                         return this.props.terminalTemplate.aboutHome();
+                    case 'aboutMap':
+                        return this.props.terminalTemplate.aboutMap();
                     case 'aboutSite': 
                         return this.props.terminalTemplate.aboutSite();
                     case 'clearHelp':
