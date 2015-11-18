@@ -11,7 +11,8 @@ elixir(function(mix) {
           'jquery/dist/jquery.js',
           'react/dist/react-with-addons.js',
           'react-dom/dist/react-dom.js', 
-          'radium/dist/radium.js'
+          'radium/dist/radium.js',
+          'react-gmaps/dist/index.js'
         ],'public/js/vendor.js','node_modules/')
         .sass(['app.scss','map.scss', 'nav.scss', 'intro.scss', 'gifs.scss', 'about.scss', 'terminal.scss'])
         .babel([
@@ -40,7 +41,7 @@ elixir(function(mix) {
           'TerminalCommandModel.js',
           'Terminal.js'
         ], 'resources/assets/js/all/terminal.js', 'resources/assets/js/terminal/')
-        .scripts(['date.js', 'time.js', 'map.js'],'public/js/map.js', 'resources/assets/js/map/')
+        .scripts(['date.js', 'time.js', 'newMap.js'],'public/js/newMap.js', 'resources/assets/js/map/')
         .scripts(['components/nav.js', 'all/terminal.js'], 'public/js/app.js', 'resources/assets/js/');     
 });
 

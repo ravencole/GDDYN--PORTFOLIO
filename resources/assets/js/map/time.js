@@ -1,4 +1,4 @@
-function dumbTime( time ) {
+function formatTime( time ) {
   
   this.time   = time;
   var re      = /(\d{2}):(\d{2}):(\d{2})/,

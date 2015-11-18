@@ -11,6 +11,7 @@
     "laravel-elixir": "^3.0.0",
     "radium": "^0.14.3",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-gmaps": "^1.2.0"
   }
 }
