@@ -1,19 +1,11 @@
-var map;
-var alleyPics;
+var alleyImages;
+var imageHeight = window.innerHeight,
+        imageWidth  = imageHeight * 6 / 4.5,
+        mapWidth    = window.innerWidth - imageWidth;
 
-var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-};
-
-$.getJSON("/alley",
-  function(data) {
-    alleyPics = data;  
-    setMarkers(map);       
-});  
-    
+$('#map').css({ 'width': mapWidth, 'height': window.innerHeight - 75 + 'px'});
 function initMap() {
-    var richmondMapType = new google.maps.StyledMapType([
+  var richmondMapType = new google.maps.StyledMapType([
         {
             "featureType":"administrative",
             "elementType":"labels.text.fill",
@@ -63,7 +55,7 @@ function initMap() {
     var customMapTypeId = 'richmond_style';
 
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 37.558588, lng: -77.476961}, 
+        center: {lat: 37.561986111111, lng: -77.479133333333}, 
         zoom: 14,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
@@ -72,34 +64,31 @@ function initMap() {
 
     map.mapTypes.set(customMapTypeId, richmondMapType);
     map.setMapTypeId(customMapTypeId);
-
+  $.getJSON("/alley",
+    function(data) { 
+      var infoBoxHeight = window.innerHeight;
+      alleyImages = data; 
+      console.log(alleyImages);
+      setMarkers(map);
+      $('#infoBox').css({ 'width': mapWidth, 'height': infoBoxHeight - (infoBoxHeight - 50) + 'px'});
+    }
+  );  
 }
 
 function setMarkers(map) {
   var image = {
-    url: '',
+    url: '/images/map_icons/mapsMarker-unvisited.png',
     size: new google.maps.Size(20, 32),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(0, 32)
   };
-  
-  var randomIcon = function() {
-    var random = Math.floor((Math.random() * 10) + 1);
-    return '/images/map_icons/icon' + random + '.png';
+  var shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
   };
-  
-  var infowindow = new google.maps.InfoWindow();
-
-  for (var i = 0; i < alleyPics.length; i++) {
-    image.url = randomIcon();
-    var pic = alleyPics[i];
-
-    
-    var content = 
-      '<div id="iw-container">' +
-        '<img width="300px" src="/images/alley_images/' + pic["name"] + '">' +
-      '</div>'
-    ;
+  for (var i = 0; i < alleyImages.length; i++) {
+    image.url = '/images/map_icons/mapsMarker-unvisited.png';
+    var pic = alleyImages[i];
 
     pic["latitude"] = Number(pic["latitude"]);
     pic["longitude"] = Number(pic["longitude"]);
@@ -112,66 +101,67 @@ function setMarkers(map) {
     });
 
     var previousMarker;
-    google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+    google.maps.event.addListener(marker,'click', (function(marker){ 
         return function() {
           if (previousMarker) {
-            var reVisited = /active/; 
-            var strVisited = previousMarker['icon']['url'];
-            var substVisited = 'visited'; 
- 
-            image["url"] = strVisited.replace(reVisited, substVisited);
+            image["url"] = '/images/map_icons/mapsMarker-current.png';
             previousMarker.setIcon(image);
           }
           buildInfoBox(marker["id"]);
-          var reClicked = /((icon\d\d?)([^\.]?)+)/; 
-          var strClicked = marker['icon']['url'];
-          var substClicked = '$2-active'; 
-          
-          image["url"] = strClicked.replace(reClicked, substClicked);
+          image["url"] = '/images/map_icons/mapsMarker-visited.png';
           marker.setIcon(image);
           previousMarker = marker;
         };
-    })(marker,content,infowindow));
-    var imageHeight = window.innerHeight;
-        imageWidth  = imageHeight * 6 / 4.5;
-
+    })(marker));
+    
     function buildInfoBox( id ) {
-      for (var i = alleyPics.length - 1; i >= 0; i--) {
-        if (alleyPics[i]["id"] === id) {
-          var currentMarker = alleyPics[i];
+      for (var i = alleyImages.length - 1; i >= 0; i--) {
+        if (alleyImages[i]["id"] === id) {
+          var currentMarker = alleyImages[i];
         }
       };
-
-      var time = new dumbTime( currentMarker["time"] );
-      time.formatHour();
-      time.formatAmPm();
-      var sleepyTime = time.getTime();
-
       var backgroundImageUrl = '/images/alley_images/' + currentMarker["name"];
-      $('#image-box').css({
-        'height': imageHeight,
-        'width': imageWidth,
+      
+      $('.image--box').css({
+        'height': imageHeight + 'px',
+        'width': imageWidth  + 'px',
         'background-image': 'url("' + backgroundImageUrl + '")'
       });
-      $('#image-box').empty().append(
-
-        '<div class="image-box-info">'+
-          '<div class="info-subject">' + currentMarker["latitude"] + '</div>' +
-          '<div class="info-subject">' + currentMarker["longitude"] + '</div>' +
-          '<div class="info-subject">' + formatDate( currentMarker["date"] ) + '</div>' +
-          '<div class="info-subject">' + sleepyTime["hour"]+ ':' + sleepyTime["minute"] + ' ' + sleepyTime["amPm"] + '</div>' +
-        '</div>'
-
-      );
+      
+      var time = new formatTime( currentMarker["time"] );
+      time.formatHour();
+      time.formatAmPm();
+      var currentMarkerTime = time.getTime();
+      $("#infoBoxDate").text(formatDate(currentMarker["date"]));
+      $("#infoBoxTime").text(currentMarkerTime["hour"] + ':' + currentMarkerTime["minute"] + ' ' + currentMarkerTime["amPm"]);
+      $("#infoBoxLat").text(currentMarker["latitude"]);
+      $("#infoBoxLon").text(currentMarker["longitude"]);
     }
   }
 }
 
-$('#image-box').hover(function() {
-    $('.image-box-info').fadeIn(250).css('display', 'flex');
-  }, function() {
-    $('.image-box-info').fadeOut(250);
+var imageInfoBoxClosed = true;
+$('#infoBox').on('click', function() {
+  if (imageInfoBoxClosed) {
+    $('#map').css({'height': window.innerHeight - 200 + 'px'});
+    $('#infoBox').css({'height': window.innerHeight - (window.innerHeight - 175) + 'px'});
+    $('.info--arrow').css({'top': '15%'});
+    $('.info--arrow__left').css({'transform': 'rotate(25deg)'});
+    $('.info--arrow__right').css({'transform': 'rotate(-25deg)'});
+    $('.info--box__info').css({'display': 'flex'});
+    imageInfoBoxClosed = false;
+    return;
+  } 
+  $('#map').css({'height': window.innerHeight - 75 + 'px'});
+  $('#infoBox').css({'height': window.innerHeight - (window.innerHeight - 50) + 'px'});
+  $('.info--arrow').css({'top': '50%'});
+  $('.info--arrow__right').css({'transform': 'rotate(25deg)'});
+  $('.info--arrow__left').css({'transform': 'rotate(-25deg)'});
+  $('.info--box__info').css({'display': 'none'});
+  imageInfoBoxClosed = true;
 });
+
+
 
 
 

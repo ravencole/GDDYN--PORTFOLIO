@@ -41,7 +41,7 @@ elixir(function(mix) {
           'TerminalCommandModel.js',
           'Terminal.js'
         ], 'resources/assets/js/all/terminal.js', 'resources/assets/js/terminal/')
-        .scripts(['date.js', 'time.js', 'newMap.js'],'public/js/newMap.js', 'resources/assets/js/map/')
+        .scripts(['date.js', 'time.js', 'map.js'],'public/js/map.js', 'resources/assets/js/map/')
         .scripts(['components/nav.js', 'all/terminal.js'], 'public/js/app.js', 'resources/assets/js/');     
 });
 
