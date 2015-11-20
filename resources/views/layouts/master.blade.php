@@ -15,7 +15,7 @@
         <a href="/"><div id="nav-home">home</div></a>
       </div>
       <div id="nav-right-half">
-        <a href="/terminal"><div id="nav-terminal" style="font-size: 11px;">terminal</div></a>
+        <a href="/terminal"><div id="nav-terminal">term</div></a>
         <a href="/about"><div id="nav-about">about</div></a>
         <a href="/map"><div id="nav-map">map</div></a>
         <a href="/gifs"><div id="nav-gifs">gifs</div></a>
